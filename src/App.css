@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  /* color */
+  --text-color-: hsl(193, 38%, 86%);
+  --quote-header-color-: hsl(150, 100%, 66%);
+  --quote-background-color-: hsl(217, 19%, 38%);
+  --dark-grayish-blue-: hsl(217, 19%, 24%);
+  --background-color-: hsl(218, 23%, 16%);
+
+  /* font size */
+  --quote-size-: 1.75rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Manrope', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
+button {
+  appearance: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.app {
   min-height: 100vh;
+  min-width: 100vw;
+  background: var(--background-color-);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: var(--dark-grayish-blue-);
+  width: 45%;
+  min-height: 40vh;
+  text-align: center;
+  padding: 30px 40px;
+  position: relative;
+  box-shadow:
+    0px 0px 2.3px rgb(81, 255, 168, 0.045),
+    0px 0px 2.7px hsla(217, 19%, 24%, 0.042),
+    0px 0px 2.9px hsla(217, 19%, 24%, 0.044),
+    0px 0px 5px hsla(217, 19%, 24%, 0.08);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.divider {
+  margin-bottom: 30px;
+}
+
+.header {
+  color: var(--quote-header-color-);
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.container p {
+  color: var(--text-color-);
+  font-size: var(--quote-size-);
+  font-weight: 800;
+  margin: 30px 0;
+}
+
+.btn-quote {
+  background: var(--quote-header-color-);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 15px;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  box-shadow: 0px 0px 5px hsla(217, 19%, 24%, 0.08)
 }
 
-.App-link {
-  color: #61dafb;
+.btn-quote:hover {
+  box-shadow: 
+    0px 0px 30px 0px rgba(82,255,168,0.042),
+    0px 0px 40px 0px rgba(82,255,168,0.48),
+    0px 0px 50px 0px rgba(82,255,168,0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80vw;
+    padding: 20px 30px 80px 30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .divider {
+    margin-bottom: 0;
+  }
+
+  .btn-quote {
+    width: 60px;
+    height: 60px;
+    padding: 18px;
   }
 }
